@@ -43,7 +43,6 @@ function groupBy(arr, logic){
   
   for(item of arr){
     let newProp = logic(item);
-    console.log(newProp); //TEST
     
     if(organizedBox.hasOwnProperty(`${newProp}`)){
       let groupHold = organizedBox[`${newProp}`];
