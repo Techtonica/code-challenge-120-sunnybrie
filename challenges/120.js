@@ -45,13 +45,15 @@ function groupBy(arr, logic){
     let newProp = logic(item);
     
     if(organizedBox.hasOwnProperty(`${newProp}`)){
-      let groupHold = organizedBox[`${newProp}`];
-      groupHold.push(item);
+      //let groupHold = organizedBox[`${newProp}`]; // Ver. 1
+      //groupHold.push(item); // Ver. 1
+      organizedBox[`${newProp}`].push(item); // <-- (Ver. 2) Alternate code
     }
     else {
       organizedBox[`${newProp}`] = [];
-      let groupHold = organizedBox[`${newProp}`];
-      groupHold.push(item);
+      //let groupHold = organizedBox[`${newProp}`]; // Ver. 1
+      //groupHold.push(item); // Ver. 1
+      organizedBox[`${newProp}`].push(item); // <-- (Ver. 2) Alternate code
     };
 
   };
