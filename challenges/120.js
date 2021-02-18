@@ -38,9 +38,42 @@
 //
 
 function groupBy(arr, logic){
-  return(
-    // replace this line with your code
-  );
+
+  let organizedBox = new Object;
+  
+  for(item of arr){
+    let newProp = logic(item);
+    console.log(newProp); //TEST
+    
+    if(organizedBox.hasOwnProperty(`${newProp}`)){
+      let groupHold = organizedBox[`${newProp}`];
+      groupHold.push(item);
+    }
+    else {
+      organizedBox[`${newProp}`] = [];
+      let groupHold = organizedBox[`${newProp}`];
+      groupHold.push(item);
+    };
+
+  };
+  
+  return organizedBox;
 }
+
+var butterflies = [
+  {name:"bugsby", color:"blue", species:"morpho"},
+  {name:"daisy", color:"yellow", species:"thistle-eater"},
+  {name:"dell", color:"blue", species:"russian-blue"},
+  {name:"kingsley", color:"orange", species:"monarch"}
+];
+
+console.log(groupBy(butterflies, b => b.color));
+
+pomeranians = [
+  { name: 'Osito', weight_kg: 3.5 },
+  { name: 'Maní', weight_kg: 3.9 },
+  { name: 'Bella', weight_kg: 7.2 }
+];
+console.log(groupBy(pomeranians, (p) => Math.floor(p.weight_kg)));
 
 module.exports = groupBy;
