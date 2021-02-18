@@ -75,4 +75,23 @@ pomeranians = [
 ];
 console.log(groupBy(pomeranians, (p) => Math.floor(p.weight_kg)));
 
+/* TEST OUPUT 
+
+{
+  blue: [
+    { name: 'bugsby', color: 'blue', species: 'morpho' },
+    { name: 'dell', color: 'blue', species: 'russian-blue' }
+  ],
+  yellow: [ { name: 'daisy', color: 'yellow', species: 'thistle-eater' } ],
+  orange: [ { name: 'kingsley', color: 'orange', species: 'monarch' } ]
+}
+{
+  '3': [
+    { name: 'Osito', weight_kg: 3.5 },
+    { name: 'Maní', weight_kg: 3.9 }
+  ],
+  '7': [ { name: 'Bella', weight_kg: 7.2 } ]
+}
+*/
+
 module.exports = groupBy;
